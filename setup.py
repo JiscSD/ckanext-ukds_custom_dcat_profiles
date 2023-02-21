@@ -87,7 +87,7 @@ setup(
         ukds_custom_dcat_profiles=ckanext.ukds_custom_dcat_profiles.plugin:UkdsCustomDcatProfilesPlugin
 
         [ckan.rdf.profiles]
-        ukds_dcat_ap=ckanext.ukds_custom_dcat_profiles.profile_new:UkdsCustomDcatProfilesProfile
+        ukds_dcat_ap=ckanext.ukds_custom_dcat_profiles.profile:UkdsCustomDcatProfilesProfile
 
         [babel.extractors]
         ckan = ckan.lib.extract:extract_ckan
