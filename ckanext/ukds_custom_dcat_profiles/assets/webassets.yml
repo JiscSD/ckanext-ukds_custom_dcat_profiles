@@ -1,0 +1,14 @@
+# ukds_custom_dcat_profiles-js:
+#   filter: rjsmin
+#   output: ckanext-ukds_custom_dcat_profiles/%(version)s-ukds_custom_dcat_profiles.js
+#   contents:
+#     - js/ukds_custom_dcat_profiles.js
+#   extra:
+#     preload:
+#       - base/main
+
+# ukds_custom_dcat_profiles-css:
+#   filter: cssrewrite
+#   output: ckanext-ukds_custom_dcat_profiles/%(version)s-ukds_custom_dcat_profiles.css
+#   contents:
+#     - css/ukds_custom_dcat_profiles.css
