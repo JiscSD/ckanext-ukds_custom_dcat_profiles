@@ -4,7 +4,9 @@
 
 This extension provides a custom profile based on the dataset properties (Following the writing custom profiles documentation ) for the UKDS CKAN platform.
 
-This profile will support future non-object fields that could be created in any of the structures of the dataset (dataset, organization, resources etc). For RDF representation of future new objects and list, an enhancement of the current profile is required.
+It also provides an easy access to the API JSON format of the dataset and the DCAT RDF serialization format endpoints through the dataset page, having one list item per serialization format.
+
+The profile will support future non-object fields that could be created in any of the structures of the dataset (dataset, organization, resources etc). For RDF serialization of future new objects and list, an enhancement of the current profile is required.
 
 ## Requirements
 
