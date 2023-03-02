@@ -40,7 +40,7 @@
   {% block DCAT %}
           <section class="module module-narrow module-shallow license">
             {% block DCAT_title %}
-                <h2 class="module-heading"><i class="fa fa-info"></i> {{ _('Machine-readable data') }}</h2>
+                <h2 class="module-heading"><a href="https://en.wikipedia.org/wiki/Machine-readable_data" target="_blank" title="Information about Machine-readable data"><i class="fa fa-info"></i> {{ _('Machine-readable data') }}</a></h2>
             {% endblock %}
             {% block DCAT_nav %}
                 <ul class="nav nav-simple">
@@ -51,6 +51,7 @@
                     <li class="nav-item"><a href="{{ h.full_current_url() }}.ttl" target="_blank">Turtle</a></li>
                     <li class="nav-item"><a href="{{ h.full_current_url() }}.n3" target="_blank">Notation3</a></li>
                     <li class="nav-item"><a href="{{ h.full_current_url() }}.jsonld" target="_blank">JSON-LD</a></li>
+                    <li class="nav-item"><a href="https://github.com/ckan/ckanext-dcat#overview" target="_blank">DCAT documentation</a></li>
               </ul>
             {% endblock %}
           </section>
