@@ -1,5 +1,4 @@
 {% ckan_extends %}
-
 {% macro license_string(pkg_dict) %}
   {% if 'license_url' in pkg_dict %}
     <a href="{{ pkg_dict.license_url }}" rel="dc:rights">{{ pkg_dict.license_title }}</a>
@@ -38,22 +37,33 @@
   {% endif %}
   <!-- Start handling DCAT links -->
   {% block DCAT %}
-          <section class="module module-narrow module-shallow license">
-            {% block DCAT_title %}
-                <h2 class="module-heading"><a href="https://en.wikipedia.org/wiki/Machine-readable_data" target="_blank" title="Information about Machine-readable data"><i class="fa fa-info"></i> {{ _('Machine-readable data') }}</a></h2>
-            {% endblock %}
-            {% block DCAT_nav %}
-                <ul class="nav nav-simple">
-                    {% if pkg_dict.name %}
-                      <li class="nav-item"><a href="{{ h.url_for_static('/api/3/action/package_show?id=') }}{{pkg_dict.name}}" target="_blank">API</a></li>
-                    {% endif %}
-                    <li class="nav-item"><a href="{{ h.full_current_url() }}.xml" target="_blank">RDF/XML</a></li>
-                    <li class="nav-item"><a href="{{ h.full_current_url() }}.ttl" target="_blank">Turtle</a></li>
-                    <li class="nav-item"><a href="{{ h.full_current_url() }}.n3" target="_blank">Notation3</a></li>
-                    <li class="nav-item"><a href="{{ h.full_current_url() }}.jsonld" target="_blank">JSON-LD</a></li>
-                    <li class="nav-item"><a href="https://github.com/ckan/ckanext-dcat#overview" target="_blank">DCAT documentation</a></li>
-              </ul>
-            {% endblock %}
-          </section>
+
+    {% asset "ukds_custom_dcat_profiles/ukds_custom_dcat_profiles-js" %}
+    {% asset "ukds_custom_dcat_profiles/ukds_custom_dcat_profiles-css" %}
+    
+
+    <section class="module module-narrow module-shallow license">
+      {% block DCAT_title %}
+          <h2 class="module-heading MRD_info"
+            data-module="ukds_cdp_popover_info"
+            data-module-type="MRD_info"
+            data-module-title="Machine-readable data"
+          >
+                <i class="fa fa-info"></i> {{ _('Machine-readable data') }}
+          </h2>
+      {% endblock %}
+      {% block DCAT_nav %}
+          <ul class="nav nav-simple">
+              {% if pkg_dict.name %}
+                <li class="nav-item"><a href="{{ h.url_for_static('/api/3/action/package_show?id=') }}{{pkg_dict.name}}" target="_blank">API</a></li>
+              {% endif %}
+              <li class="nav-item"><a href="{{ h.full_current_url() }}.xml" target="_blank">RDF/XML</a></li>
+              <li class="nav-item"><a href="{{ h.full_current_url() }}.ttl" target="_blank">Turtle</a></li>
+              <li class="nav-item"><a href="{{ h.full_current_url() }}.n3" target="_blank">Notation3</a></li>
+              <li class="nav-item"><a href="{{ h.full_current_url() }}.jsonld" target="_blank">JSON-LD</a></li>
+              <li class="nav-item"><a href="https://github.com/ckan/ckanext-dcat#overview" target="_blank">DCAT documentation</a></li>
+        </ul>
+      {% endblock %}
+    </section>
   {% endblock %}
 {% endblock %}

@@ -16,9 +16,9 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # http://packaging.python.org/en/latest/tutorial.html#version
-    version='0.0.3',
+    version='0.0.4',
 
-    description='''Extension with custom profiles for dcat extension''',
+    description='''Extension with custom profiles for dcat extension, and links to Machine-readable data (API and RDF) in dataset page''',
     long_description=long_description,
     long_description_content_type="text/markdown",
 

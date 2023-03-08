@@ -1,0 +1,14 @@
+ /* Popover */
+ .popover {
+    width: 400px;
+    max-width: 400px;
+    text-align : justify
+ }
+ .popover .popover-content
+ {
+    word-break: break-word;
+ }
+
+ .MRD_info {
+    cursor: pointer;
+ }
