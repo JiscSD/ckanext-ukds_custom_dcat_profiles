@@ -42,6 +42,14 @@ DISTRIBUTION_LICENSE_FALLBACK_CONFIG = 'ckanext.dcat.resource.inherit.license'
 
 custom = 'ukds:'
 
+def valid_json(json_str):
+    try:
+        json_obj = json.loads(json_str)
+        return json_obj
+    except ValueError as e:
+        json_obj_dq  = json.loads(json_str.replace("'","\""))
+        return json_obj_dq
+    
 
 def create_node_properties(graph, node, object, ignored_fields = []):
 
@@ -128,7 +136,8 @@ class UkdsCustomDcatProfilesProfile(RDFProfile):
         # Start adding properties to the new node.
         g.add((gs_node,RDF.type,DCT.spatial))
 
-        create_node_properties(g,gs_node,json.loads(gs_object))
+
+        create_node_properties(g,gs_node,valid_json(gs_object))
 
         # Tags
         for tag in dataset_dict.get('tags'):
